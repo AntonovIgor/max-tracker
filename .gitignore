@@ -1,0 +1,16 @@
+.DS_Store
+.vscode
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+yarn.lock
+js/build/
+node_modules/
+npm-debug.*
+Thumbs.db
+js/build
+__release/
+bundle.js
