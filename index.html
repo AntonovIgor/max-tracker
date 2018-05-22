@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Менеджер задач</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Менеджер задач
+            <span class="badge">1</span>
+        </h1>
+    </div>
+    <div class="main">
+        <ul class="task-list">
+            <li class="task-list__item">
+                <input class="task-list__complete" type="checkbox">
+                <span class="task-list__category label label-default">Домашние дела</span>
+                <span class="task-list__deadline label label-info">22.05.2018</span>
+                <span class="task-list__description">Убраться в комнате</span>
+            </li>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input id="todo" type="text" class="form-control" placeholder="Введите текст задачи">
+                        <input type="text" class="form-control" placeholder="20.05.2018">
+                        <select class="form-control">
+                            <option value="homeWork">Домашние дела</option>
+                            <option value="school">Школа</option>
+                            <option value="personalTime">Личное время</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+</body>
+
+</html>
