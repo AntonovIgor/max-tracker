@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <h1>Менеджер задач
-            <span class="badge">1</span>
+            <span class="task-list-count badge">1</span>
         </h1>
     </div>
     <div class="main">
@@ -34,8 +34,8 @@
                 <form class="form-inline">
                     <div class="form-group">
                         <input id="todo" type="text" class="form-control" placeholder="Введите текст задачи">
-                        <input type="text" class="form-control" placeholder="20.05.2018">
-                        <select class="form-control">
+                        <input type="text" class="form-control" placeholder="20.05.2018">                        
+                        <select class="categories form-control">
                             <option value="homeWork">Домашние дела</option>
                             <option value="school">Школа</option>
                             <option value="personalTime">Личное время</option>
@@ -45,7 +45,8 @@
                 </form>
             </div>
         </div>
-    </div>    
+    </div>
+    <script src="./js/data.js"></script>
 </body>
 
 </html>
