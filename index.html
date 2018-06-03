@@ -31,22 +31,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
-                <form class="form-inline">
+                <form class="form-inline new-task">
                     <div class="form-group">
-                        <input id="todo" type="text" class="form-control" placeholder="Введите текст задачи">
-                        <input type="text" class="form-control" placeholder="20.05.2018">                        
-                        <select class="categories form-control">
+                        <input id="todo" type="text" class="new-task__title  form-control" placeholder="Введите текст задачи">
+                        <input type="text" class="new-task__deadline  form-control" placeholder="20.05.2018">                        
+                        <select class="new-task__category categories form-control">
                             <option value="homeWork">Домашние дела</option>
                             <option value="school">Школа</option>
                             <option value="personalTime">Личное время</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Добавить</button>
+                    <button type="submit" class="add-task-button btn btn-primary">Добавить</button>
                 </form>
             </div>
         </div>
-    </div>
+    </div>    
     <script src="./js/renderTasksCount.js"></script>
+    <script src="./js/addNewTask.js"></script>
     <script src="./js/data.js"></script>
 </body>
 
