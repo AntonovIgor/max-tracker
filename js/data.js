@@ -58,6 +58,7 @@
 
     var tasks = getAllTasks();
     renderTaskList(tasks);
-    
+      
+    window.getAllTasks=getAllTasks;
 
 })();
