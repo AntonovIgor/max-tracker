@@ -30,6 +30,25 @@
         ];
         return result;
     }
+
+    var getAllCategories = function () {
+        var result = [
+            {
+                categoryTitle: 'Домашние дела',
+                categorySystemName: 'homeThings'
+            },
+            {
+                categoryTitle: 'Школа',
+                categorySystemName: 'school'
+            },
+            {
+                categoryTitle: 'Спортзал',
+                categorySystemName: 'sportzal'
+            },
+        ];
+        
+        return result;
+    }
     
     var getTaskCount = function (tasks) {
         return tasks.length;
@@ -45,6 +64,10 @@
         return result;
     }
 
+    var getCategoriesTemplate = function(categoryName, categorySystemName) {
+        return `<option value="${categorySystemName}">${categoryName}</option>`;        
+    }
+
     var renderTaskList = function(tasks){
         var taskList = document.querySelector(".task-list");
         taskList.innerHTML = "";
@@ -56,8 +79,23 @@
         taskList.innerHTML= resultTemPlate;
     }
 
+    var renderCategoriesList = function (categories) {
+        var categoriesElement = document.querySelector('.categories');
+        categoriesElement.innerHTML = '';     
+
+        // Вспомнить про отрисовку. Способ ниже перерисовыется на каждой
+        // итерации цикла.
+
+        for (var i = 0; i < categories.length; i++) {            
+            categoriesElement.innerHTML += getCategoriesTemplate(categories[i].categoryTitle, categories[i].categorySystemName);
+        }
+    }
+
     var tasks = getAllTasks();
     renderTaskList(tasks);
+
+    var allCategories = getAllCategories();
+    renderCategoriesList(allCategories);
 
     window.renderTasksCount(tasks.length);     
 
