@@ -16,7 +16,7 @@
                 category : "Школа",
                 deadline : "18.05.2018",
                 title : "Исправить оценки"
-            },
+            },            
             {
                 category : "Личное Время",
                 deadline : "01.06.2018",
@@ -58,6 +58,7 @@
 
     var tasks = getAllTasks();
     renderTaskList(tasks);
-    
+
+    window.renderTasksCount(tasks.length);     
 
 })();
