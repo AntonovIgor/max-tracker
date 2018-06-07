@@ -40,19 +40,28 @@
         return result;
     } 
 
+    var clearAllFields = function() {
+        newTaskTitleElement.value = "";
+        newTaskDeadlineElement.value = "";
+        newTaskCategoryElement.value = "homeThings";   
+    }  
+
     addTaskButtonElement.addEventListener('click', function (evt) {
         evt.preventDefault();  
         
-        if (isValidateForm() === true) {
+        if (isValidateForm() === true) {           
           
             var newTaskObject = {
-                category : newTaskCategoryElement.value,
+                category : window.data.getCategoryTitleBySystemName(newTaskCategoryElement.value),
                 deadline : newTaskDeadlineElement.value,
                 title : newTaskTitleElement.value
             };
 
             window.data.allTasks.push(newTaskObject);
             window.data.renderTaskList(window.data.allTasks);
+            window.renderTasksCount(window.data.allTasks.length);
+            
+            clearAllFields();
 
         } else {
             alert('Ошибка!!!!');

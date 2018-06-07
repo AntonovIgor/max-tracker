@@ -92,8 +92,14 @@
     }
 
     var getCategoryTitleBySystemName  = function (systemName) {
-        for (var i = 0; allCategories.length < 0; i++ )  {}; //
-    } // Дописать функцию
+        for (var i = 0; i < allCategories.length - 1; i++)  {
+            if (allCategories[i].categorySystemName === systemName) {
+                return allCategories[i].categoryTitle;
+            }
+        };
+        
+        return '';
+    } 
 
     var tasks = getAllTasks();
     renderTaskList(tasks);
@@ -106,7 +112,8 @@
 
     window.data = {
         allTasks: tasks,
-        renderTaskList: renderTaskList
+        renderTaskList: renderTaskList,
+        getCategoryTitleBySystemName: getCategoryTitleBySystemName
     };  
 
 })();
