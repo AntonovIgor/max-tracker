@@ -12,7 +12,7 @@
     var newTaskTitleElement = newTaskFormElement.querySelector('.new-task__title');
     var newTaskDeadlineElement = newTaskFormElement.querySelector('.new-task__deadline ');
     var newTaskCategoryElement = newTaskFormElement.querySelector('.new-task__category');
-
+    
     var isValidateForm = function () {
         var result = true;
           

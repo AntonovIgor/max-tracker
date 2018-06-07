@@ -43,6 +43,16 @@ html, body {
     padding: 20px;
     max-width: 520px;
   }
+
+  .task-list__item--completed {
+    background: green;
+  }
+
+  .task-list__item--completed .task-list__description  {
+    text-decoration: line-through;
+    font-weight: 200;    
+    font-style: italic;
+  }
   
  
   
