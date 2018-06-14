@@ -7,35 +7,22 @@
 
     var clickTaskCompletedHandler = function (evt) {
         var parent = evt.target.parentNode;
-        parent.classList.add('task-list__item--completed');
-        // classList.remove(); // передать класс, который требуется удалить.
-        // Класс передается без точки.
-        
+        if (evt.target.checked === true) {
+            parent.classList.add('task-list__item--completed');
+        } else {
+            parent.classList.remove('task-list__item--completed');
+        }
     }
 
-    var clickRemoveTaskCompletedHadler = function (evt){
-        var original=evt.target.parentNode;
-        original.classList.remove('task-list__item--completed');
-
-    }
-
-    
 
     var bindListeners = function () {
-        for (var i = 0; i <= taskListCompleteArray.length-1; i++) {
-            console.log(i);
-            taskListCompleteArray[i].addEventListener('click', clickTaskCompletedHandler);
+        for (var i = 0; i <= taskListCompleteArray.length-1; i++) {            
+            taskListCompleteArray[i].addEventListener('change', clickTaskCompletedHandler);
         }
     }
 
-    var removeBlindListerners = function () {
-        for (var i = 0; i <= taskListCompleteArray.length-1; i++) {
-            console.log(i);
-            taskListCompleteArray[i].addEventListener('dblclick',clickRemoveTaskCompletedHadler );
-        }
-    }
-
+  
     bindListeners();
-    removeBlindListerners();
+  
 
 })();

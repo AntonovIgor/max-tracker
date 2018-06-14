@@ -9,23 +9,27 @@
             {
                 category : "Домашние дела",
                 deadline : "22.05.2018",
-                title : "Убраться в комнате"
+                title : "Убраться в комнате",
+                isCompleated: false
 
             },
             {
                 category : "Школа",
                 deadline : "18.05.2018",
-                title : "Исправить оценки"
+                title : "Исправить оценки",
+                isCompleated: false
             },            
             {
                 category : "Личное Время",
                 deadline : "01.06.2018",
-                title : "Почитать книгу"
+                title : "Почитать книгу",
+                isCompleated: false
             },
             {
                 category : "Личное Время",
                 deadline : "01.06.2018",
-                title : "Почитать книгу"
+                title : "Почитать книгу",
+                isCompleated: false
             }
         ];
         return result;
@@ -54,9 +58,9 @@
         return tasks.length;
     }
 
-    var getTaskTemplate = function(category, deadline, title){
+    var getTaskTemplate = function(category, deadline, title, isCompleated){
         var result = `<li class="task-list__item">
-        <input class="task_list__complete" type="checkbox">
+        <input class="task_list__complete" type="checkbox" ${isCompleated ? 'checked': ''}>
         <span class="task-list__category label label-default">${category}</span>
         <span class="task-list__deadline label label-info">${deadline}</span>
         <span class="task-list__description">${title}</span>
@@ -73,7 +77,7 @@
         taskList.innerHTML = "";
         var resultTemPlate= "";
         for (var i = 0; i<tasks.length;i++){
-            resultTemPlate = resultTemPlate+ getTaskTemplate(tasks[i].category, tasks[i].deadline, tasks[i].title)
+            resultTemPlate = resultTemPlate+ getTaskTemplate(tasks[i].category, tasks[i].deadline, tasks[i].title, tasks[i].isCompleated);
         }
 
         taskList.innerHTML= resultTemPlate;
